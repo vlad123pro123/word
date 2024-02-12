@@ -8,11 +8,8 @@ function updateSavedText() {
         data.forEach(item => {
           // Создаем новый элемент с уникальным id для каждого сохраненного текста
           const newTextElement = document.createElement('div');
-          newTextElement.id = `newtext_${item.id}`; 
-
-         
+          newTextElement.id = `newtext_${item.id}`;
           newTextElement.innerHTML = item.data;
-
           // тут я добавляю элемент в savedText
           savedTextElement.appendChild(newTextElement);
         });
@@ -24,17 +21,13 @@ function updateSavedText() {
       console.error('Ошибка при получении данных:', error);
     });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  updateSavedText();
-});
-
+document.addEventListener('DOMContentLoaded',function (){
+    updateSavedText();
+})
 // Функция для обновления js-textarea с сохраненными стилями
 function updateTextareaWithStyles(htmlContent) {
-  const textarea = document.getElementById('js-textarea');
-  textarea.innerHTML = htmlContent;
+    document.getElementById('js-textarea').innerHTML = htmlContent;
 }
-
 document.getElementById('savedText').addEventListener('click', function (event) {
   // При клике на сохраненный текст, обновляем js-textarea
   if (event.target.tagName === 'DIV') {
@@ -42,11 +35,8 @@ document.getElementById('savedText').addEventListener('click', function (event) 
       updateTextareaWithStyles(htmlContent);
   }
 });
-
 document.getElementById('save').addEventListener('click', function () {
-  const dataElement = document.getElementById('js-textarea');
-  const data = dataElement.innerHTML; 
-
+  const data = document.getElementById('js-textarea').innerHTML;
   fetch('/saveData', {
       method: 'POST',
       headers: {
