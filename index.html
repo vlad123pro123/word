@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
     <section class="container">
         <div class="block">
-            <div class="block-content">  
-                    
+            <div class="block-content">
                 <button id="save" class="ssave">Сохранить</button>
+                <button id="insertImageBtn" class="ssave">Вставить изображение</button>
                 <button id="close">X</button>
             </div>
             <div class="content-butthon">
-             
                     <select name="" id="fontSelect">
                         <option value="Arial, Helvetica, sans-serif">Arial</option>
                         <option value="'Times New Roman', Times, serif">Times New Roman</option>
@@ -42,8 +41,6 @@
                                 R
                         </button> 
                     </div>
-               
-                
                     <input type="color" id="colorPicker" value="#000000">
                     <button id="Tab" tabindex="0">Tab</button>
                     <div class="container-hrift">
@@ -51,18 +48,14 @@
                         <button id="italicize"  title="Курсивный">К</button>
                         <button id="underlineButton"  title="Подчеркнутый">П</button>
                     </div>
-               
             </div>
         </div>
         <div class="textcontent">
             <div id="js-textarea" contenteditable="true" style="border: 1px solid #ccc; padding: 5px;"></div>
         </div>
-        
     </section>
     <div class="savedata" id="savedText"></div>
-  
-
     <script src="/script.js"></script>
-    <script src="/text.js"></script>
+    <script src="/src/text.js"></script>
 </body>
 </html>
